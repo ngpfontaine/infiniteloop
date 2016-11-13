@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Infinite While Loop</title>
+  <meta charset="utf-8">
+  <meta name='theme-color' content='#333'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<style>
+  html {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#29d196+0,27b4c4+50,8d7ae2+100 */
+    background: #29d196; /* Old browsers */
+    background: -moz-linear-gradient(30deg,  #29d196 0%, #27b4c4 60%, #9596E8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(30deg,  #29d196 0%,#27b4c4 60%,#9596E8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(30deg,  #29d196 0%,#27b4c4 60%,#9596E8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29d196', endColorstr='#9596E8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    font-family: sans-serif;
+    color: #fff;
+    /*height: 100%;*/
+    text-align: center;
+    cursor: pointer;
+  }
+  div.bg {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+  }
+  div.bg-01 {
+    background:
+    linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
+    linear-gradient(45deg, #ECEDDC 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-color: #EC173A;
+    opacity: 0.015;
+  }
+  div.bg-02 {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,000000+100 */
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ffffff 0%, #000000 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #ffffff 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+    opacity: 0.25;
+  }
+  div.container {
+    position: absolute;
+    right: 0; left: 0;
+    top: 48%;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+  div#text {
+    font-size: 9vw;
+    letter-spacing: -1vw;
+    display: inline-block;
+  }
+  div#text-looping, div#text-countdown, noscript {
+    font-size: 3vw;
+    margin-top: 100px;
+    color: rgba(0,0,0,0.3);
+  }
+  noscript {
+    display: block;
+  }
+  #text-looping, #text-countdown {
+    display: none;
+  }
+  span.blinking {
+    opacity: 0;
+    animation: blinkingDot 0.8s infinite linear;
+  }
+  @keyframes blinkingDot {
+    0% { opacity: 0; }
+    49% { opacity: 0; }
+    50% { opacity: 1; }
+    99% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+</style>
+
+<body onclick='start();'>
+
+  <div class='bg bg-02'></div><div class='bg bg-01'></div>
+
+  <div class='container'>
+    <div id='text'>(^ ‿ ^)</div>
+    <div id='text-countdown'>click to start!</div>
+    <div id='text-looping'>looping..<span class="blinking">.</span></div>
+    <noscript>bit hard to loop w/o JS, no?</noscript>
+  </div>
+
+</body>
+
+  <script>
+  var t = document.getElementById('text');
+  var tC = document.getElementById('text-countdown');
+  var tL = document.getElementById('text-looping');
+  var inc = 0;
+  var loopEnable = true;
+  var tCCount = 3;
+
+  tC.style.display = 'block';
+
+  function start() {
+    console.log('countdown');
+    assign();
+
+    setTimeout(function(){ assign(); },1000);
+    setTimeout(function(){ assign(); },2000);
+    setTimeout(function(){ loop(); },3000);
+
+    function assign() {
+      tC.innerHTML = tCCount;
+      console.log(tCCount);
+      tCCount--;
+    }
+  }
+
+  function loop() {
+    console.log('starting loop();');
+    tC.style.display = 'none';
+    tL.style.display = 'block';
+    t.innerHTML = '( ✖ _ ✖ )';
+
+    setTimeout(function() {
+      for (;;) {
+        if (loopEnable) {
+          inc++;
+          console.log('looping... ' + inc);
+        }
+        else {
+          d.innerHTML = '( ✖ _ ✖ )';
+        }
+      }
+    },200);
+
+  }
+
+  </script>
+
+</html>
