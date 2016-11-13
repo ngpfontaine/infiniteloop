@@ -5,18 +5,20 @@ b/c why not? right...?
     
 # Wut?
     
-- Onclick, Page will run an infinite loop via ``` for(;;) { (...) } ```
+- Onclick, Page will countdown then run an infinite loop via ``` for(;;) { (...) } ```
     
 - Incremental output in console
     
     
-# To-Do
+# To-Do    
+    
+- anything?
     
 # More
 
 Check out my website at [nicfontaine.com](https://nicfontaine.com)    
     
-Twitter: [@ngpfontaine](https://twitter/ngpfontaine    
+Twitter: [@ngpfontaine](https://twitter/ngpfontaine)    
     
 # License    
     
