@@ -3,7 +3,7 @@ b/c why not? right...?
     
 -     
     
-![screenshot](https://github.com/ngpfontaine/infiniteloop/blod/master/extra/infiniteloop-screen-01.png)    
+![screenshot](https://github.com/ngpfontaine/infiniteloop/blob/master/extra/infiniteloop-screen-01.png)    
     
     
 # Wut?
