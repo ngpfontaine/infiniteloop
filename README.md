@@ -1,5 +1,5 @@
 # infiniteloop
-b/c why not? right...?
+b/c why not? ...right?
     
 ![screenshot](https://github.com/ngpfontaine/infiniteloop/blob/master/extra/infiniteloop-screen-01.png)    
     
